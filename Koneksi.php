@@ -9,7 +9,7 @@ function koneksi(){
     $db_database = "db_pendaftaranpraktikum";
 
     try {
-        return new mysqli(db_host,db_user,db_password,db_database);
+        return new mysqli($db_host,$db_user,$db_password,$db_database);
     } catch (Exception $e) {
         echo "terjadi kesalahan database";
     }

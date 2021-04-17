@@ -32,5 +32,3 @@
 
     }
     
-// $coba = new ModulModel();
-// var_export($coba->get());die();

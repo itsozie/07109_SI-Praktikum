@@ -140,6 +140,4 @@
     }
 
 }
-// $coba = new PraktikanModel();
-// var_export($coba->getPendaftaranPraktikum(1,1));
-// die();
+

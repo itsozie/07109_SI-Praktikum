@@ -8,7 +8,7 @@
     require_once("Model/DaftarPrakModel.php");
     require_once("Model/ModulModel.php");
     require_once("Model/PraktikanModel.php");
-    require_once("Model/PraktikanModel.php");
+    require_once("Model/PraktikumModel.php");
 
 //Routing dari URL ke Obyek Class PHP
 if (isset($_GET['page']) && isset($_GET['aksi'])) {

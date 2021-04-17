@@ -21,6 +21,3 @@
             require_once("View/praktikum/index.php");
         }
     }
-
-// $coba = new PraktikumModel();
-// var_export($coba->get());die();

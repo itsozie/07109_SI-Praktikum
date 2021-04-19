@@ -66,13 +66,13 @@
 
                 header("location:index.php?page=praktikan&aksi=view&pesan=berhasilLogin");
             }else {
-                    header("location:index.php?page=aslab&aksi=loginPraktikan&pesan=password atau npm salah");
+                    header("location:index.php?page=auth&aksi=loginPraktikan&pesan=password atau npm salah");
                 }
         }
 
         public function logout(){
             session_destroy();
-            header("location:index.php?page=aslab&aksi=view&pesan=berhasilLogout");
+            header("location:index.php?page=auth&aksi=view&pesan=berhasilLogout");
         }
 
     }

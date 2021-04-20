@@ -34,7 +34,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         } else if ($aksi == 'logout') {
             $auth->logout();
         } else if ($aksi == 'daftar_praktikan') {
-            $auth->daftarPraktikan();
+            $auth->daftar_praktikan();
         } else if ($aksi == 'storePraktikan') {
             require_once("View/auth/index.php");
         } else {

@@ -21,7 +21,7 @@
                 <div class="card-body">
                     <a href="index.php?page=auth&aksi=loginAslab" class="btn btn-primary">Login Aslab</a>
                     <a href="index.php?page=auth&aksi=loginPraktikan" class="btn btn-dark">Login Praktikan</a>
-                    <a href="index.php?page=auth&aksi=daftarPraktikan" class="btn btn-success">Daftar Praktikan</a>
+                    <a href="index.php?page=auth&aksi=daftar_praktikan" class="btn btn-success">Daftar Praktikan</a>
                 </div>
             </div>
         </div>

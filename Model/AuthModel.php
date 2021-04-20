@@ -16,7 +16,7 @@
             require_once("View/auth/login_praktikan.php");
         }
 
-        /**mengatur halaman login daftar praktikan */
+        /**mengatur halaman daftar praktikan */
         public function daftar_praktikan(){
             require_once("View/auth/daftar_praktikan.php");
         }

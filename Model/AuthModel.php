@@ -21,7 +21,7 @@
             require_once("View/auth/daftar_praktikan.php");
         }
 
-
+        
         public function prosesAuthAslab($npm,$password){
             $sql = "select * from aslab where npm='$npm' and password='$password'";
             $query = koneksi()->query($sql);
@@ -60,6 +60,7 @@
             $npm = $_POST['npm'];
             $password = $_POST['password'];
             $data = $this->prosesAuthPraktikan($npm,$password);
+            
             if ($data) {
                 $_SESSION['role'] = 'praktikan';
                 $_SESSION['praktikan'] = $data;
@@ -76,3 +77,6 @@
         }
 
     }
+
+    // $coba = new AuthModel();
+    // var_export($coba->prosesAuthPraktikan('06.2018.1.07000','123'));die;

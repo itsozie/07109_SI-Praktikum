@@ -18,7 +18,7 @@
             $query = koneksi()->query($sql);
             $hasil =[];
             while ($data = $query->fetch_assoc()) {
-                $hasil = $data;
+                $hasil [] = $data;
             }
             return $hasil;
         }
@@ -45,7 +45,7 @@
             $query = koneksi()->query($sql);
             $hasil =[];
             while ($data = $query->fetch_assoc()) {
-                $hasil = $data;
+                $hasil [] = $data;
             }
             return $hasil;
         }
@@ -64,7 +64,7 @@
             $query = koneksi()->query($sql);
             $hasil =[];
             while ($data = $query->fetch_assoc()) {
-                $hasil = $data;
+                $hasil [] = $data;
             }
             return $hasil;
         }
@@ -82,3 +82,7 @@
         }
 
     }
+
+// $coba = new AslabModel();
+// var_export($coba->getNilaiPraktikan('1'));
+// die();

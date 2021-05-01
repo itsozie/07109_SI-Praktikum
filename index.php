@@ -1,5 +1,9 @@
 <?php
-    // koneksi
+    /**
+	 *koneksi antara database
+	 *dan halaman index
+     * 
+     */
     require_once("Koneksi.php");
 
     /**memanggil Model */
@@ -12,9 +16,7 @@
 
 //Routing dari URL ke Obyek Class PHP
 if (isset($_GET['page']) && isset($_GET['aksi'])) {
-
     session_start();
-
     $page = $_GET['page']; // Berisi nama page
     $aksi = $_GET['aksi']; // Aksi Dari setiap page
 
@@ -42,7 +44,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }
         
 
-        // aslab
+    // aslab
     } else if ($page == "aslab") {
         require_once("View/menu/menu_aslab.php");
         // sessions aslab
@@ -69,7 +71,6 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         // sessions praktikum
         if ($_SESSION['role'] == 'aslab') {
             $praktikum = new PraktikumModel();
-
         if ($aksi == 'view') {
             $praktikum->index();
         } else if ($aksi == 'create') {
@@ -91,7 +92,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             header("location: index.php?page=auth&aksi=loginAslab");
         }
 
-        // modul
+    // modul
     } else if ($page == "modul") {
         require_once("View/menu/menu_aslab.php");
         if ($_SESSION['role'] == 'aslab') {
@@ -114,7 +115,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
     
 
 
-        // praktikan
+    // praktikan
     } else if ($page == "praktikan") {
         require_once("View/menu/menu_praktikan.php");
         if ($_SESSION['role'] == 'praktikan') {
@@ -141,7 +142,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         }
 
 
-        // daftarPrak
+    // daftarPrak
     } else if ($page == 'daftarprak') {
         require_once("View/menu/menu_aslab.php");
         if ($_SESSION['role'] == 'aslab') {
@@ -155,12 +156,9 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         } else {
             echo "Method Not Found";
         }
-
      } else {
             header("location: index.php?page=auth&aksi=loginAslab");
         } 
-
-
     } else {
         echo "Page Not Found";
     }

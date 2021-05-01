@@ -8,8 +8,8 @@
         public function get($id){
         $sql= "
             SELECT * FROM praktikan
-            WHERE id - $id
-        ";
+            WHERE id = $id
+              ";
         $query=koneksi()->query($sql);
         return $query->fetch_assoc();
     }
@@ -37,7 +37,7 @@
         $query = koneksi()->query($sql);
         $hasil =[];
         while ($data = $query->fetch_assoc()) {
-            $hasil = $data;
+            $hasil [] = $data;
         }
         return $hasil; 
 
@@ -69,7 +69,7 @@
         $query = koneksi()->query($sql);
         $hasil =[];
         while ($data = $query->fetch_assoc()) {
-            $hasil = $data;
+            $hasil [] = $data;
         }
         return $hasil; 
     }
@@ -100,7 +100,7 @@
         $query = koneksi()->query($sql);
         $hasil =[];
         while ($data = $query->fetch_assoc()) {
-            $hasil = $data;
+            $hasil []= $data;
         }
         return $hasil; 
     }
@@ -122,7 +122,7 @@
         $query = koneksi()->query($sql);
         $hasil =[];
         while ($data = $query->fetch_assoc()) {
-            $hasil = $data;
+            $hasil [] = $data;
         }
         return $hasil; 
     }
@@ -141,3 +141,5 @@
 
 }
 
+    // $coba = new PraktikanModel();
+    // var_export($coba->nilaiPraktikan());die;

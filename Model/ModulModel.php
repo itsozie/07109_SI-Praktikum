@@ -103,14 +103,14 @@
             $getLastData = $this->getLastData();
             if ($getLastData==null) {
                 for ($i=1; $i <= $modul; $i++) { 
-                    $nama = 'modul' . $i;
+                    $nama = 'modul ' . $i;
                     $post = $this->prosesStore($nama, $praktikum);
                 }
             }else {
                 $modulLast= explode(" ", $getLastData['nama']);
                 for ($i=1; $i <= $modul; $i++) { 
                     $a = $modulLast['1'] += 1;
-                    $nama = 'modul' . $a;
+                    $nama = 'modul ' . $a;
                     $post = $this->prosesStore($nama, $praktikum);
                 }
             }

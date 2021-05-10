@@ -105,14 +105,14 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         if ($aksi == 'view') {
             $modul->index();
         } else if ($aksi == 'create') {
-            require_once("View/modul/create.php");
-            // $modul->create();
+            // require_once("View/modul/create.php");
+            $modul->create();
         } else if ($aksi == 'store') {
-            require_once("View/modul/index.php");
-            // $modul->store();
+            // require_once("View/modul/index.php");
+            $modul->store();
         } else if ($aksi == 'delete') {
-            require_once("View/modul/index.php");
-            // $modul->delete();
+            // require_once("View/modul/index.php");
+            $modul->delete();
         } else {
             echo "Method Not Found";
         }

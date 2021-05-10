@@ -142,7 +142,21 @@
             }  
         }
 
+            /**
+     * function untuk menampilkan halaman edit
+     * ambil salah satu data dari database dengan param ID
+     * ambil dari GET dengan ID
+     */
+    public function edit(){
+        $id = $_GET['id'];
+        $data = $this->getById($id);
+        extract($data);
+        require_once("View/praktikum/edit.php");
+        }
+
     }
+
+
     
     // $coba = new PraktikumModel();
     // var_export($coba->prosesNonAktifkan(2));die;

@@ -78,7 +78,8 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         } else if ($aksi == 'store') {
             require_once("View/praktikum/index.php");
         } else if ($aksi == 'edit') {
-            require_once("View/praktikum/edit.php");;
+            require_once("View/praktikum/edit.php");
+            // $praktikum->edit();
         } else if ($aksi == 'update') {
             require_once("View/praktikum/index.php");
         } else if ($aksi == 'aktifkan') {

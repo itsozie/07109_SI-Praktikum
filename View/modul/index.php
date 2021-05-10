@@ -33,7 +33,7 @@
                             <?php $no=1; 
                             foreach($data as $row): ?>
                             <tr>
-                                <td><?= $no ?>;</td>
+                                <td><?= $no ;?></td>
                                 <td><?= $row['praktikum'];?></td>
                                 <td><?= $row['nama'];?></td>
                                 <td>

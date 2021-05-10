@@ -133,7 +133,7 @@
          * function ini berfungsi untuk memproses update salah satu field data
          * mengambil data GET dari id
          */
-        public function nonAktifkan($id){
+        public function nonAktifkan(){
             $id = $_GET['id'];
             if ($this->prosesNonAktifkan($id)) {
                 header("location: index.php?page=praktikum&aksi=view&pesan=Berhasil non aktifkan Data");

@@ -77,18 +77,19 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
             require_once("View/praktikum/create.php");
         } else if ($aksi == 'store') {
             require_once("View/praktikum/index.php");
+            // $praktikum->store();
         } else if ($aksi == 'edit') {
-            require_once("View/praktikum/edit.php");
-            // $praktikum->edit();
+            // require_once("View/praktikum/edit.php");
+            $praktikum->edit();
         } else if ($aksi == 'update') {
-            require_once("View/praktikum/index.php");
-            // $praktikum->update();
+            // require_once("View/praktikum/index.php");
+            $praktikum->update();
         } else if ($aksi == 'aktifkan') {
-            // $praktikum->aktifkan();
-            require_once("View/praktikum/index.php");
+            $praktikum->aktifkan();
+            // require_once("View/praktikum/index.php");
         } else if ($aksi == 'nonAktifkan') {
-            require_once("View/praktikum/index.php");
-            // $praktikum->nonAktifkan();
+            // require_once("View/praktikum/index.php");
+            $praktikum->nonAktifkan();
         } else {
             echo "Method Not Found";
         }

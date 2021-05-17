@@ -95,7 +95,8 @@
         }
 
         /**
-         * function store digunakan untuk menyimpan data modul yg telah diinputkan
+         * function store digunakan untuk menyimpan data modul
+         *  yg telah diinputkan
          */
         public function store(){
             $modul = $_POST['modul'];
@@ -115,9 +116,11 @@
                 }
             }
             if($post){
-                header("Location: index.php?page=modul&aksi=view&pesan=Berhasil  Menambah data");
+                header("Location: index.php?page=modul&aksi=view&pesan=Berhasil 
+                 Menambah data");
             }else {
-                header("Location: index.php?page=modul&aksi=create&pesan=Gagal  Menambah data");
+                header("Location: index.php?page=modul&aksi=create&pesan=Gagal  
+                Menambah data");
             }
         }
 
@@ -127,9 +130,11 @@
         public function delete(){
             $id = $_GET['id'];
             if ($this->prosesDelete($id)) {
-                header("Location: index.php?page=modul&aksi=view&pesan=Berhasil Delete data");
+                header("Location: index.php?page=modul&aksi=view&pesan=Berhasil 
+                Delete data");
             }else {
-                header("Location: index.php?page=modul&aksi=view&pesan=Gagal Delete data");
+                header("Location: index.php?page=modul&aksi=view&pesan=Gagal 
+                Delete data");
             }
         }
 
@@ -137,5 +142,5 @@
 
     
     // $coba = new ModulModel();
-    // var_export($coba->store());die;
+    // var_export($coba->prosesDelete(4));die;
     

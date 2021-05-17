@@ -40,7 +40,8 @@
                                 <td><?= $row['npmPraktikan']; ?></td>
                                 <td><?= $row['nohpPraktikan']; ?></td>
                                 <!-- id Diganti saat modul 3 -->
-                                <td><a href="index.php?page=aslab&aksi=nilai&id=<?= $row['idPraktikan']; ?>" class="btn btn-outline-primary">Nilai</a></td>
+                                <td><a href="index.php?page=aslab&aksi=nilai&id=<?= $row['idPraktikan']; ?>" 
+                                class="btn btn-outline-primary">Nilai</a></td>
                             </tr>
                             <?php 
                         $no++; 

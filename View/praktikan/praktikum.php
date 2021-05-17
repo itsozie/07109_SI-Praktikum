@@ -35,7 +35,8 @@
                                 <td><?= $no; ?></td>
                                 <td><?= $row['namaPraktikum'];?></td>
                                 <td>
-                                    <a href="index.php?page=praktikan&aksi=nilaiPraktikan&idPraktikum=<?= $row['idPraktikum'] ;?>" class="btn btn-info">Cek Nilai</a>
+                                    <a href="index.php?page=praktikan&aksi=nilaiPraktikan&idPraktikum=<?= $row['idPraktikum'] ;?>" 
+                                    class="btn btn-info">Cek Nilai</a>
                                 </td>
                             </tr>
                             <?php $no++;

@@ -38,7 +38,8 @@
                                 <td><?= $row['praktikum'];?></td>
                                 <td><?= $row['nama'];?></td>
                                 <td>
-                                    <a href="index.php?page=modul&aksi=delete&id=<?= $row['id'];?>" class="btn btn-danger">Hapus</a>
+                                    <a href="index.php?page=modul&aksi=delete&id=<?= $row['id'];?>" 
+                                    class="btn btn-danger">Hapus</a>
                                 </td>
                             </tr>
                             <?php $no++;

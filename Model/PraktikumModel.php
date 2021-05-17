@@ -157,6 +157,5 @@
     }
 
 
-    
     // $coba = new PraktikumModel();
-    // var_export($coba->prosesNonAktifkan(2));die;
+    // var_export($coba->prosesAktifkan(4));die;

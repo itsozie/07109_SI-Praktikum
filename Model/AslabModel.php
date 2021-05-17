@@ -81,8 +81,69 @@
             require_once("View/aslab/nilai.php");
         }
 
+        /**
+         * @param integer $idModul berisi id modul
+         * @param integer $idPraktikan berisi id praktikan
+         * @param integer $nilai berisi id nilai
+         * function ini digunakan untuk mengisi nilai yang sesuai 
+         * dengan id praktikan dan id per modul
+         * kedalam database 
+         */
+        public function prosesStoreNilai($idModul,$idPraktikan,$nilai){
+            $sqlCek = "
+                        SELECT * FROM nilai WHERE modul_id=$idModul
+                        and praktikan_id=$idPraktikan
+                        ";
+
+            $cek= koneksi()->query($sqlCek);
+
+            if($cek->fetch_assoc()==null) {
+                $sqlInsert= "
+                             INSERT INTO nilai(modul_id,praktikan_id,nilai) 
+                             VALUES($idModul,$idPraktikan,$nilai
+                             ";
+
+                $query = koneksi()->query($sqlInsert);
+            }else {
+                $sqlUpdate = "
+                              UPDATE nilai SET nilai='$nilai' 
+                              WHERE modul_id=$idModul and praktikan_id=$idPraktikan
+                              ";
+
+                 $query = koneksi()->query($sqlUpdate);
+            }
+            return $query;
+        }
+
+        /**
+         * function store nilai berfungsi untuk menyimpan data nilai
+         * sesuai dengan id praktikan dari form yang telah diisi aslab
+         * pada halaman create nilai
+         */
+        public function storeNilai(){
+            $idModul = $_POST['modul'];
+            $idPraktikan = $_POST['id'];
+            $nilai = $_POST['nilai'];
+            if ($this->prosesStoreNilai($idModul,$idPraktikan,$nilai)) {
+                header("location: index.php?page=aslab&aksi=nilai&pesan=
+                Berhasil Tambah Data&id=$idPraktikan");
+            }else {
+                header("location: index.php?page=aslab&aksi=nilai&pesan=
+                Gagal Tambah Data&id=$idPraktikan");
+            }
+        }
+
+        /**
+         * function createNilai berfungsi untuk mengatur halaman nilai
+         */
+        public function createNilai(){
+            $modul = $this->getModul();
+            extract($modul);
+            require_once("View/aslab/createNilai.php");
+        }
+
     }
 
 // $coba = new AslabModel();
-// var_export($coba->getNilaiPraktikan('1'));
+// var_export($coba->prosesStoreNilai(2,2,98));
 // die();

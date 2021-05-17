@@ -76,7 +76,39 @@
             header("location:index.php?page=auth&aksi=view&pesan=berhasilLogout");
         }
 
+        /**
+         * @param string $nama berisi nama
+         * @param string $npm berisi npm
+         * @param string $no_hp berisi no hp
+         * @param string $password berisi password
+         * function ini digunakan untuk menambahkan data praktikan
+         */
+        public function prosesStorePraktikan($nama, $npm, $no_hp, $password){
+            $sql= "
+                INSERT INTO praktikan(nama,npm,nomor_hp,password)
+                VALUES('$nama','$npm','$no_hp','$password')
+            ";
+            return koneksi()->query($sql);
+        }
+
+        /**
+         * function ini digunakan untuk menambah data praktikan
+         * fungsi ini mengambil data dari POST nama, 
+         * npm,no hp, dan password
+         */
+        public function storePraktikan(){
+            $nama = $_GET['nama'];
+            $npm = $_GET['npm'];
+            $no_hp = $_GET['no_hp'];
+            $password = $_GET['password'];
+            if ($this->prosesStorePraktikan($nama,$npm,$no_hp,$password)) {
+                header("location: index.php?page=auth&aksi=view&pesan= Berhasil Daftar");
+            }else {
+                header("location: index.php?page=auth&aksi=daftarPraktikan&pesan= Berhasil Daftar");
+            }
+        }
+
     }
 
-    // $coba = new AuthModel();
-    // var_export($coba->prosesAuthPraktikan('06.2018.1.07000','123'));die;
+    $coba = new AuthModel();
+    var_export($coba->prosesStorePraktikan('komar','06.2019.2.07109','098','123'));die;

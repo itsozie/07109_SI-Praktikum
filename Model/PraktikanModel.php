@@ -212,11 +212,9 @@
         $praktikum = $_POST['praktikum'];
         $idPraktikan = $_SESSION['praktikan']['id'];
         if ($this->prosesStorePraktikum($idPraktikan, $idPraktikum)) {
-            header("location: index.php?page=praktikan&aksi=praktikum&pesan
-            Berhasil Daftar");
+            header("location: index.php?page=praktikan&aksi=praktikum&pesanBerhasil Daftar");
         }else {
-            header("location: index.php?page=praktikan&aksi=daftarPraktikum&pesan
-            Gagal Daftar");
+            header("location: index.php?page=praktikan&aksi=daftarPraktikum&pesanGagal Daftar");
         }
     }
 }

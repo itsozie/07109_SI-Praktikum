@@ -125,11 +125,9 @@
             $idPraktikan = $_POST['id'];
             $nilai = $_POST['nilai'];
             if ($this->prosesStoreNilai($idModul,$idPraktikan,$nilai)) {
-                header("location: index.php?page=aslab&aksi=nilai&pesan=
-                Berhasil Tambah Data&id=$idPraktikan");
+                header("location: index.php?page=aslab&aksi=nilai&pesan=Berhasil Tambah Data&id=$idPraktikan");
             }else {
-                header("location: index.php?page=aslab&aksi=nilai&pesan=
-                Gagal Tambah Data&id=$idPraktikan");
+                header("location: index.php?page=aslab&aksi=nilai&pesan=Gagal Tambah Data&id=$idPraktikan");
             }
         }
 
@@ -145,5 +143,5 @@
     }
 
 // $coba = new AslabModel();
-// var_export($coba->prosesStoreNilai(2,2,98));
+// var_export($coba->prosesStoreNilai(1,1,87));
 // die();

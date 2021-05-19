@@ -34,16 +34,14 @@
                             <?php $no=1; 
                             foreach($data as $row): ?>
                             <td><?= $no ?>;</td>
-                            <td><?= $row['namaPraktikan'];?></td>
-                            <td><?= $row['namaPraktikum'];?></td>
+                            <td><?= $row['namaPraktikan']?></td>
+                            <td><?= $row['namaPraktikum']?></td>
                                 <td>
                                     <!-- # nanti di ganti saat modul 3 -->
                                     <?php if ($row['status'] == '0') : ?>
-                                    <a href="index.php?page=daftarprak&aksi=verif&id=<?=$row['idDaftar'] ;?>" 
-                                    class="btn btn-success">Verif</a>
+                                    <a href="index.php?page=daftarprak&aksi=verif&id=<?=$row['idDaftar']?>" class="btn btn-success">Verif</a>
                                     <?php else : ?>
-                                    <a href="index.php?page=daftarprak&aksi=unVerif&id=<?=$row['idDaftar'] ;?>&idPraktikan=<?=$row['idPraktikan'] ;?>" 
-                                    class="btn btn-danger">Un-Verif</a>
+                                    <a href="index.php?page=daftarprak&aksi=unVerif&id=<?=$row['idDaftar']?>&idPraktikan=<?=$row['idPraktikan']?><?= $row['idDaftar']?>" class="btn btn-danger">Un-Verif</a>
                                     <?php endif ; ?>
                                 </td>
                             </tr>

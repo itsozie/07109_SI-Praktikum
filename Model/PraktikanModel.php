@@ -147,7 +147,7 @@
      * @param integer $id berisi id
      * function ini digunakan untuk update  data praktikan
      */
-    public function prosesUpdate($nama, $npm, $password, $no_hp, $id){
+    public function prosesUpdate($nama,$npm,$password,$no_hp,$id){
         $sql = "
                UPDATE praktikan SET 
                nama='$nama', npm='$npm', password='$password', nomor_hp='$no_hp'
@@ -167,7 +167,7 @@
         $npm = $_POST['npm'];
         $no_hp = $_POST['nomor_hp'];
         $password = $_POST['password'];
-        if ($this->prosesUpdate($nama, $npm, $password, $no_hp, $id)) {
+        if ($this->prosesUpdate($nama,$npm,$password,$no_hp,$id)) {
             header("location: index.php?page=praktikan&aksi=view&pesan=berhasil ubah data");
         }else {
             header("location: index.php?page=praktikan&aksi=edit&pesan=gagal ubah data");
@@ -192,13 +192,8 @@
      */
     public function prosesStorePraktikum($idPraktikan, $idPraktikum){
         $sql = "
-                INSERT INTO daftarprak(
-                    praktikan_id, praktikum_id, status)
-                VALUES(
-                    $idPraktikan, $idPraktikum, 0
-                )
-        ";
-        
+                INSERT INTO daftarprak(praktikan_id, praktikum_id, status)
+                VALUES($idPraktikan, $idPraktikum, 0)";
         $query = koneksi()->query($sql);
 
         return $query;
@@ -209,7 +204,7 @@
      * memproses data praktikum yang dipilih untuk ditambahkan
      */
     public function storePraktikum(){
-        $praktikum = $_POST['praktikum'];
+        $idPraktikum = $_POST['praktikum'];
         $idPraktikan = $_SESSION['praktikan']['id'];
         if ($this->prosesStorePraktikum($idPraktikan, $idPraktikum)) {
             header("location: index.php?page=praktikan&aksi=praktikum&pesanBerhasil Daftar");

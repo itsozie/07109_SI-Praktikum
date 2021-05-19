@@ -5,7 +5,7 @@
          */
         public function get(){
         $sql = "
-        SELECT daftarprak.id as idDaftar, daftarprak.praktikan_id as id_Praktikan, 
+        SELECT daftarprak.id as idDaftar, daftarprak.praktikan_id as idPraktikan,
         praktikan.nama as namaPraktikan, daftarprak.status as status, praktikum.nama as namaPraktikum
         FROM daftarprak
         JOIN praktikan
@@ -35,11 +35,11 @@
      * @param integer $id_aslab berisi id aslab
      * function ini digunakan untuk mengupdate status daftarprak
      */
-    public function prosesVerif($id, $idAslab){
+    public function prosesVerif($id,$idAslab){
         $sql = "
                 UPDATE daftarprak SET status = 1,
-                aslab_id = $idAslab WHERE id = $id
-        ";
+                aslab_id = $idAslab WHERE id = $id";
+
         $query = koneksi()->query($sql);
         return $query;
     }
@@ -66,8 +66,8 @@
      */
     public function verif(){
         $id = $_GET['id'];
-        $idAslab = $_GET['aslab']['id'];
-        if ($this->prosesVerif($id,$idAslab)) {
+        $idAslab = $_SESSION['aslab']['id'];
+        if($this->prosesVerif($id,$idAslab)) {
             header("location: index.php?page=daftarprak&aksi=view&pesan=Berhasil Verifikasi Praktikan");
         }else {
             header("location: index.php?page=daftarprak&aksi=view&pesan=Gagal Verifikasi Praktikan");
@@ -78,7 +78,7 @@
      * function Unverif berfungsi untuk mengUnverifikasi praktikan 
      * yang sudah mendaftar praktikum
      */
-    public function Unverif(){
+    public function UnVerif(){
         $id = $_GET['id'];
         $idAslab = $_GET['idPraktikan'];
         if ($this->prosesUnVerif($id,$idPraktikan)) {
@@ -92,4 +92,4 @@
 
 
 // $tes = new DaftarPrakModel();
-// var_export($tes->prosesVerif(2,2));die();
+// var_export($tes->prosesUnVerif(1,1));die();

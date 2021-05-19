@@ -100,7 +100,7 @@
             if($cek->fetch_assoc()==null) {
                 $sqlInsert= "
                              INSERT INTO nilai(modul_id,praktikan_id,nilai) 
-                             VALUES($idModul,$idPraktikan,$nilai
+                             VALUES($idModul,$idPraktikan,$nilai)
                              ";
 
                 $query = koneksi()->query($sqlInsert);
@@ -121,9 +121,9 @@
          * pada halaman create nilai
          */
         public function storeNilai(){
-            $idModul = $_POST['modul'];
-            $idPraktikan = $_POST['id'];
-            $nilai = $_POST['nilai'];
+            $idModul        = $_POST['modul'];
+            $idPraktikan    = $_GET['id'];
+            $nilai          = $_POST['nilai'];
             if ($this->prosesStoreNilai($idModul,$idPraktikan,$nilai)) {
                 header("location: index.php?page=aslab&aksi=nilai&pesan=Berhasil Tambah Data&id=$idPraktikan");
             }else {
@@ -143,5 +143,5 @@
     }
 
 // $coba = new AslabModel();
-// var_export($coba->prosesStoreNilai(1,1,87));
+// var_export($coba->prosesStoreNilai(1,1,50));
 // die();

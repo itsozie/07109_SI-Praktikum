@@ -97,14 +97,14 @@
          * npm,no hp, dan password
          */
         public function storePraktikan(){
-            $nama = $_GET['nama'];
-            $npm = $_GET['npm'];
-            $no_hp = $_GET['no_hp'];
-            $password = $_GET['password'];
+            $nama = $_POST['nama'];
+            $npm = $_POST['npm'];
+            $no_hp = $_POST['no_hp'];
+            $password = $_POST['password'];
             if ($this->prosesStorePraktikan($nama,$npm,$no_hp,$password)) {
                 header("location: index.php?page=auth&aksi=view&pesan= Berhasil Daftar");
             }else {
-                header("location: index.php?page=auth&aksi=daftarPraktikan&pesan= Berhasil Daftar");
+                header("location: index.php?page=auth&aksi=daftarPraktikan&pesan=gagal Daftar");
             }
         }
 

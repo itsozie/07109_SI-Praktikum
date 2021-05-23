@@ -17,7 +17,7 @@
     require_once("Controller/AuthController.php");
     require_once("Controller/AslabController.php");
     require_once("Controller/DaftarPrakController.php");
-    require_once("Controller/Modulroller.php");
+    require_once("Controller/ModulController.php");
     require_once("Controller/PraktikanController.php");
     require_once("Controller/PraktikumController.php");
 
@@ -56,7 +56,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         require_once("View/menu/menu_aslab.php");
         // sessions aslab
         if ($_SESSION['role'] == 'aslab') {
-        $aslab = new AslabModel();
+        $aslab = new AslabController();
         if ($aksi == 'view') {
             $aslab->index();
         } else if ($aksi == 'nilai') {

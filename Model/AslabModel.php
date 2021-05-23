@@ -24,16 +24,6 @@
         }
 
         /**
-         * mengatur tampilan awal
-         */
-        public function index(){
-            $idAslab = $_SESSION['aslab']['id'];
-            $data = $this->get($idAslab);
-            extract($data);
-            require_once("View/aslab/index.php");
-        }
-
-        /**
          *mengambil seluruh data Modul 
          */
         public function getModul(){
@@ -69,17 +59,7 @@
             return $hasil;
         }
 
-        /**
-         * mengatur tampilan nilai praktikan
-         */
-        public function nilai(){
-            $idPraktikan = $_GET['id'];
-            $modul       = $this->getModul();
-            $nilai       = $this->getNilaiPraktikan($idPraktikan);
-            extract($modul);
-            extract($nilai);
-            require_once("View/aslab/nilai.php");
-        }
+       
 
         /**
          * @param integer $idModul berisi id modul
@@ -115,30 +95,9 @@
             return $query;
         }
 
-        /**
-         * function store nilai berfungsi untuk menyimpan data nilai
-         * sesuai dengan id praktikan dari form yang telah diisi aslab
-         * pada halaman create nilai
-         */
-        public function storeNilai(){
-            $idModul        = $_POST['modul'];
-            $idPraktikan    = $_GET['id'];
-            $nilai          = $_POST['nilai'];
-            if ($this->prosesStoreNilai($idModul,$idPraktikan,$nilai)) {
-                header("location: index.php?page=aslab&aksi=nilai&pesan=Berhasil Tambah Data&id=$idPraktikan");
-            }else {
-                header("location: index.php?page=aslab&aksi=nilai&pesan=Gagal Tambah Data&id=$idPraktikan");
-            }
-        }
+        
 
-        /**
-         * function createNilai berfungsi untuk mengatur halaman nilai
-         */
-        public function createNilai(){
-            $modul = $this->getModul();
-            extract($modul);
-            require_once("View/aslab/createNilai.php");
-        }
+        
 
     }
 

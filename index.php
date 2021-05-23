@@ -126,7 +126,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
     } else if ($page == "praktikan") {
         require_once("View/menu/menu_praktikan.php");
         if ($_SESSION['role'] == 'praktikan') {
-            $praktikan = new PraktikanModel();
+            $praktikan = new PraktikanController();
         if ($aksi == 'view') {
             $praktikan->index();
         } else if ($aksi == 'edit') {

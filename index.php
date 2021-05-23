@@ -13,6 +13,13 @@
     require_once("Model/ModulModel.php");
     require_once("Model/PraktikanModel.php");
     require_once("Model/PraktikumModel.php");
+    /**memanggil controler */
+    require_once("Controller/AuthController.php");
+    require_once("Controller/AslabController.php");
+    require_once("Controller/DaftarPrakController.php");
+    require_once("Controller/Modulroller.php");
+    require_once("Controller/PraktikanController.php");
+    require_once("Controller/PraktikumController.php");
 
 //Routing dari URL ke Obyek Class PHP
 if (isset($_GET['page']) && isset($_GET['aksi'])) {

@@ -214,5 +214,5 @@
     }
 }
 
-    // $coba = new PraktikanModel();
-    // var_export($coba->prosesStorePraktikum(3,1));die;
+    // $tes = new PraktikanModel();
+    // var_export($tes->prosesStorePraktikum(1,1));die;

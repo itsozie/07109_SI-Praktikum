@@ -110,6 +110,6 @@
 
     }
 
-    // $coba = new AuthModel();
-    // var_export($coba->prosesStorePraktikan('komar','06.2019.2.07109','098','123'))
+    // $tes = new AuthModel();
+    // var_export($tes->prosesStorePraktikan('nyoba','06.2019.2.07111','123','123'))
     // ;die;

@@ -103,7 +103,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
     } else if ($page == "modul") {
         require_once("View/menu/menu_aslab.php");
         if ($_SESSION['role'] == 'aslab') {
-            $modul = new ModulModel();
+            $modul = new ModulController();
 
         if ($aksi == 'view') {
             $modul->index();

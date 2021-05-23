@@ -77,7 +77,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
         require_once("View/menu/menu_aslab.php");
         // sessions praktikum
         if ($_SESSION['role'] == 'aslab') {
-            $praktikum = new PraktikumModel();
+            $praktikum = new PraktikumController();
         if ($aksi == 'view') {
             $praktikum->index();
         } else if ($aksi == 'create') {

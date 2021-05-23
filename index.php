@@ -153,7 +153,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
     } else if ($page == 'daftarprak') {
         require_once("View/menu/menu_aslab.php");
         if ($_SESSION['role'] == 'aslab') {
-            $daftarprak = new DaftarPrakModel();
+            $daftarprak = new DaftarPrakController();
         if ($aksi == 'view') {
             $daftarprak->index();
         } else if ($aksi == 'verif') {

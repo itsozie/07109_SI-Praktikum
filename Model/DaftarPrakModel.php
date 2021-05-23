@@ -23,14 +23,6 @@
         return $hasil;
     }
     /**
-     * mengatur tampilan utama daftarprak
-     */
-    public function index(){
-        $data = $this->get();
-        extract($data);
-        require_once("VIew/daftarprak/index.php");
-    }
-    /**
      * @param integer $id berisi id
      * @param integer $id_aslab berisi id aslab
      * function ini digunakan untuk mengupdate status daftarprak
@@ -60,33 +52,6 @@
         return $query;
     }
 
-    /**
-     * function verif berfungsi untuk mengverifikasi praktikan 
-     * yang sudah mendaftar praktikum
-     */
-    public function verif(){
-        $id = $_GET['id'];
-        $idAslab = $_SESSION['aslab']['id'];
-        if($this->prosesVerif($id,$idAslab)) {
-            header("location: index.php?page=daftarprak&aksi=view&pesan=Berhasil Verifikasi Praktikan");
-        }else {
-            header("location: index.php?page=daftarprak&aksi=view&pesan=Gagal Verifikasi Praktikan");
-        }
-    }
-
-     /**
-     * function Unverif berfungsi untuk mengUnverifikasi praktikan 
-     * yang sudah mendaftar praktikum
-     */
-    public function UnVerif(){
-        $id = $_GET['id'];
-        $idAslab = $_GET['idPraktikan'];
-        if ($this->prosesUnVerif($id,$idPraktikan)) {
-            header("location: index.php?page=daftarprak&aksi=view&pesan=Berhasil UnVerifikasi Praktikan");
-        }else {
-            header("location: index.php?page=daftarprak&aksi=view&pesan=Gagal UnVerifikasi Praktikan");
-        }
-    }
 }
 
 

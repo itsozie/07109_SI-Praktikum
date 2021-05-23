@@ -1,6 +1,9 @@
 <?php
     class AslabController{
         private $model;
+        /**function ini adalah constructor untuk menginisialisasi
+         * objek aslab model
+         */
         public function __construct(){
             $this->model = new AslabModel();
         }

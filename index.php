@@ -29,7 +29,7 @@ if (isset($_GET['page']) && isset($_GET['aksi'])) {
 
     // require_once akan Dirubah Saat Modul 2
     if ($page == "auth") {
-        $auth = new AuthModel();
+        $auth = new AuthController();
         if ($aksi == 'view') {
             $auth->index();
         } else if ($aksi == 'loginAslab') {
